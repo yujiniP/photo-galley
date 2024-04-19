@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+dl,
+dd,
+dt {
+  margin: 0;
+}
+
+.photo-area {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  max-width: 300px;
+  flex: 1 1 35%;
+  overflow: hidden;
+}
+
+.photo-area dl {
+  width: 250px;
+  height: 300px;
+
+
+}
+
+.photo-area dl img {
+  width: 100%;
+}
