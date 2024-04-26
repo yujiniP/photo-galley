@@ -1,25 +1,74 @@
 import React from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
+import PhotoInfo from '../list/PhotoInfo';
+import BtnMore from '../ui/BtnMore';
+import Avatar from '../list/Avatar';
+
 
 const Wrapper = styled.div`
-  padding: 100px 0;
-  display: flex;
-  justify-content: center;
-
+  background-color: aliceblue;
 `;
 
-const MainLayout = () => {
+function MainLayout() {
+
+  // function toggleHandler() {
+  //   setCheck(isCheck => !isCheck);
+  //   console.log('BtnMore', BtnMore);
+  // };
+
   return (
     <Wrapper>
-      <div class="photo-area">
-        <dl><img src="https://i.pinimg.com/736x/37/9f/51/379f51e1d0796c56813548011d09f279.jpg" alt="photo1"></img></dl>
-        <dt>모나리자</dt>
-        <dd>레오나르도 다빈치</dd>
-      </div>
-      <div class="photo-area">
-        <dl><img src="https://i.pinimg.com/564x/df/f5/95/dff5958f57b505b87abfdfee791d0bd7.jpg" alt="photo2"></img></dl>
-        <dt>우아한 책읽기</dt>
-        <dd>모네</dd>
+      <h1>Photo Galley</h1>
+      <div className="photo-wrap">
+        <div className="frame">
+          <Avatar
+            image="https://uploads7.wikiart.org/images/georges-seurat/the-eiffel-tower-1889.jpg"
+            isNew={true}
+          />
+          {/* <div className="img-area">
+            <img src="https://uploads7.wikiart.org/images/georges-seurat/the-eiffel-tower-1889.jpg" alt="photo1" />
+            <BtnZoomInOut />
+          </div> */}
+          {/* <ul>
+            {
+              list.map(item => <li>{item}</li>)
+            }
+          </ul> */}
+          {/* <BtnMore onClick={toggleHandler}></BtnMore> */}
+          <PhotoInfo
+            title="에펠탑"
+            name="조르주 쇠라"
+          />
+        </div>
+
+        <div className="frame">
+          <div className="img-area">
+            <Avatar
+              image="https://lh3.googleusercontent.com/J0sw0IiqP2F4gavYnI-vUa5IBgHiHy42lohgm-qq1vuygUX0HQgylVSV1ZdDTV5XIg=s1200"
+              isNew={true}
+            />
+          </div>
+
+          <PhotoInfo
+            title="진주 귀고리를 한 소녀"
+            name="요하네스 페르메이르"
+          />
+        </div>
+
+        <div className="frame">
+          <div className="img-area">
+            <Avatar
+              image="https://lh3.googleusercontent.com/CRzfW0tRn-yT0MgD49zBY9hIYGsV_Fi6uM1ZwIr8T7hbpI0l6NbjX9L-OFA7Aqqo=s1200"
+            />
+          </div>
+
+          <PhotoInfo
+            title="여성의 세시기"
+            name="구스타프 클림트"
+          />
+
+        </div>
       </div>
     </Wrapper>
   );
